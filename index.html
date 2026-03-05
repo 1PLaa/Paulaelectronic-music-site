@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Underground Electronic Music Atlas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- GLOBAL COMPONENT: HEADER / NAVIGATION (Organism) -->
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand__title">UNDERGROUND ELECTRONIC MUSIC ATLAS</div>
+      <div class="brand__subtitle">Genres • DJs • Micro-scenes</div>
+    </div>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="nav__link is-active" href="#home">Home</a>
+      <a class="nav__link" href="#genres">Genres</a>
+      <a class="nav__link" href="#djs">DJs</a>
+      <a class="nav__link" href="#about">About</a>
+      <a class="nav__link" href="#game">Game</a>
+    </nav>
+  </header>
+
+  <main id="home" class="container">
+    <!-- HERO / INTRO -->
+    <section class="hero">
+      <h1>Electronic subculture, mapped.</h1>
+      <p class="muted">
+        A resource website that introduces underground electronic music genres and notable DJs,
+        showing how styles connect across scenes.
+      </p>
+      <div class="hero__actions">
+        <a class="button" href="#genres">Explore Genres</a>
+        <a class="button button--ghost" href="#djs">Browse DJs</a>
+      </div>
+    </section>
+
+    <!-- GENRES SECTION -->
+    <section id="genres" class="section">
+      <div class="section__head">
+        <h2>Genres</h2>
+        <p class="muted">Repeatable component: <strong>Genre Card (Molecule)</strong></p>
+      </div>
+
+      <div class="grid grid--3">
+        <!-- REPEATABLE COMPONENT: GENRE CARD (Molecule) -->
+        <article class="card genre-card">
+          <div class="media">Image</div>
+          <div class="card__body">
+            <h3>Hard Techno</h3>
+            <p class="muted">Fast, heavy, driving kicks; often industrial textures and rave energy.</p>
+            <div class="tags">
+              <span class="tag">140–160 BPM</span>
+              <span class="tag">industrial</span>
+              <span class="tag">rave</span>
+            </div>
+            <a class="button button--small" href="#djs">View DJs</a>
+          </div>
+        </article>
+
+        <article class="card genre-card">
+          <div class="media">Image</div>
+          <div class="card__body">
+            <h3>Gabber</h3>
+            <p class="muted">Hardcore roots with distorted kick drums, aggressive tempo, and raw vibe.</p>
+            <div class="tags">
+              <span class="tag">160–200 BPM</span>
+              <span class="tag">hardcore</span>
+              <span class="tag">raw</span>
+            </div>
+            <a class="button button--small" href="#djs">View DJs</a>
+          </div>
+        </article>
+
+        <article class="card genre-card">
+          <div class="media">Image</div>
+          <div class="card__body">
+            <h3>Psytrance</h3>
+            <p class="muted">Hypnotic rolling basslines, psychedelic sound design, trance structure.</p>
+            <div class="tags">
+              <span class="tag">135–150 BPM</span>
+              <span class="tag">psychedelic</span>
+              <span class="tag">festival</span>
+            </div>
+            <a class="button button--small" href="#djs">View DJs</a>
+          </div>
+        </article>
+
+        <article class="card genre-card">
+          <div class="media">Image</div>
+          <div class="card__body">
+            <h3>Drum &amp; Bass</h3>
+            <p class="muted">Fast breakbeats and heavy sub-bass; energetic and club-forward.</p>
+            <div class="tags">
+              <span class="tag">165–175 BPM</span>
+              <span class="tag">breakbeats</span>
+              <span class="tag">bass</span>
+            </div>
+            <a class="button button--small" href="#djs">View DJs</a>
+          </div>
+        </article>
+
+        <article class="card genre-card">
+          <div class="media">Image</div>
+          <div class="card__body">
+            <h3>Jungle</h3>
+            <p class="muted">Old-school breakbeat science with reggae/dub influence and wild edits.</p>
+            <div class="tags">
+              <span class="tag">breaks</span>
+              <span class="tag">old-school</span>
+              <span class="tag">dub</span>
+            </div>
+            <a class="button button--small" href="#djs">View DJs</a>
+          </div>
+        </article>
+
+        <article class="card genre-card">
+          <div class="media">Image</div>
+          <div class="card__body">
+            <h3>Breakcore</h3>
+            <p class="muted">Chaotic chopped breaks, extreme edits, and experimental intensity.</p>
+            <div class="tags">
+              <span class="tag">experimental</span>
+              <span class="tag">glitch</span>
+              <span class="tag">extreme</span>
+            </div>
+            <a class="button button--small" href="#djs">View DJs</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DJS SECTION -->
+    <section id="djs" class="section">
+      <div class="section__head">
+        <h2>DJs</h2>
+        <p class="muted">Repeatable component: <strong>DJ Card (Molecule)</strong></p>
+      </div>
+
+      <div class="grid grid--2">
+        <!-- REPEATABLE COMPONENT: DJ CARD (Molecule) -->
+        <article class="card dj-card">
+          <div class="media media--tall">Photo</div>
+          <div class="card__body">
+            <h3>DJ Name A</h3>
+            <p class="muted">Genre: Hard Techno</p>
+            <div class="tags">
+              <span class="tag">dark</span>
+              <span class="tag">industrial</span>
+              <span class="tag">driving</span>
+            </div>
+            <div class="actions">
+              <a class="button button--small" href="#dj-detail">View Profile</a>
+              <a class="button button--small button--ghost" href="#video">Watch Video</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card dj-card">
+          <div class="media media--tall">Photo</div>
+          <div class="card__body">
+            <h3>DJ Name B</h3>
+            <p class="muted">Genre: Psytrance</p>
+            <div class="tags">
+              <span class="tag">hypnotic</span>
+              <span class="tag">psy</span>
+              <span class="tag">rolling bass</span>
+            </div>
+            <div class="actions">
+              <a class="button button--small" href="#dj-detail">View Profile</a>
+              <a class="button button--small button--ghost" href="#video">Watch Video</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FULL ENTRY / DETAIL (Template or Organism) -->
+    <section id="dj-detail" class="section">
+      <div class="section__head">
+        <h2>DJ Detail (Example)</h2>
+        <p class="muted">Full entry layout: <strong>DJ Detail Page (Template)</strong></p>
+      </div>
+
+      <article class="detail">
+        <div class="detail__hero">
+          <div class="detail__media">Photo / Video</div>
+          <div class="detail__meta">
+            <h3>DJ Name A</h3>
+            <p class="muted">Primary genre: Hard Techno</p>
+            <div class="tags">
+              <span class="tag">hard</span>
+              <span class="tag">industrial</span>
+              <span class="tag">rave energy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail__grid">
+          <div class="detail__block">
+            <h4>Biography</h4>
+            <p class="muted">
+              Short bio: where they are from, what scene they belong to, and what their signature sound is.
+              (Replace with your own content.)
+            </p>
+          </div>
+
+          <div class="detail__block">
+            <h4>Style Notes</h4>
+            <ul class="list muted">
+              <li>Tempo range and typical drum character</li>
+              <li>Sound palette (industrial, acid, hypnotic, etc.)</li>
+              <li>Performance context (club, warehouse, festival)</li>
+            </ul>
+          </div>
+
+          <div class="detail__block">
+            <h4>Representative Tracks / Sets</h4>
+            <ul class="list muted">
+              <li>Set / track 1 (link later)</li>
+              <li>Set / track 2 (link later)</li>
+              <li>Set / track 3 (link later)</li>
+            </ul>
+          </div>
+
+          <div class="detail__block">
+            <h4>Related</h4>
+            <div class="tags">
+              <span class="tag">Hard Techno</span>
+              <span class="tag">Industrial Techno</span>
+              <span class="tag">Schranz</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- VIDEO SECTION (Optional) -->
+    <section id="video" class="section">
+      <div class="section__head">
+        <h2>DJ Video (Placeholder)</h2>
+        <p class="muted">This section represents your media experience (optional JS later).</p>
+      </div>
+
+      <div class="video">
+        <div class="video__player">Video Player Area</div>
+        <div class="video__info">
+          <h3>Featured Set</h3>
+          <p class="muted">Embed a YouTube / SoundCloud link later. For now, this shows layout + intent.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="section__head">
+        <h2>About</h2>
+        <p class="muted">Site introduction page content (simple is fine).</p>
+      </div>
+
+      <div class="card pad">
+        <p class="muted">
+          This site focuses on underground electronic music as a cultural system:
+          genres, scenes, and DJs as nodes in a network.
+        </p>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section id="game" class="section">
+      <div class="section__head">
+        <h2>Game</h2>
+        <p class="muted">Interaction idea: Match a DJ to a genre (can be static placeholder).</p>
+      </div>
+
+      <div class="card pad">
+        <h3>Match the DJ to the Genre</h3>
+        <p class="muted">Placeholder interaction (you can implement later with JS).</p>
+        <div class="grid grid--2">
+          <div class="mini">
+            <div class="mini__title">DJ Name A</div>
+            <div class="tags">
+              <span class="tag">Option: Hard Techno</span>
+              <span class="tag">Option: Psytrance</span>
+              <span class="tag">Option: Gabber</span>
+            </div>
+          </div>
+          <div class="mini">
+            <div class="mini__title">DJ Name B</div>
+            <div class="tags">
+              <span class="tag">Option: Drum &amp; Bass</span>
+              <span class="tag">Option: Psytrance</span>
+              <span class="tag">Option: Breakcore</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <small class="muted">Resource Web II — one-page demo showing components (HTML + CSS).</small>
+      <small class="muted">Replace placeholder DJ names with your chosen artists.</small>
+    </div>
+  </footer>
+</body>
+</html>
