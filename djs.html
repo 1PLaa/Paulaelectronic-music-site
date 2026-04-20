@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DJs | Electronic Music Atlas</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="djs-page">
+<body>
 
   <video class="bg-video" autoplay muted loop playsinline>
     <source src="background.mp4" type="video/mp4">
@@ -28,66 +30,118 @@
   </header>
 
   <main class="container">
+
     <section class="page-hero">
       <h1 class="page-title">DJs</h1>
       <p class="page-intro">
-        DJs shape electronic music culture through performance, atmosphere, and energy.
-        This page highlights a few artists associated with different scenes and sounds.
+        DJs define the sound, energy, and identity of electronic music scenes.
       </p>
     </section>
 
     <section class="djs-grid">
 
+      <!-- Angerfist -->
       <article class="dj-card">
-        <div class="dj-card__content">
+        <div class="dj-media">
+          <img src="angerfist.jpg">
+        </div>
+        <div class="dj-body">
+          <h2>Angerfist</h2>
+          <p class="dj-tag">Gabber / Hardcore</p>
+          <p>
+            One of the most iconic figures in hardcore and gabber, known for aggressive,
+            high-BPM tracks and his signature mask.
+          </p>
+        </div>
+      </article>
+
+      <!-- Miss K8 -->
+      <article class="dj-card">
+        <div class="dj-media">
+          <img src="missk8.jpg">
+        </div>
+        <div class="dj-body">
+          <h2>Miss K8</h2>
+          <p class="dj-tag">Hardcore / Industrial</p>
+          <p>
+            A leading force in modern hardcore, combining dark atmospheres with intense
+            festival energy.
+          </p>
+        </div>
+      </article>
+
+      <!-- Amelie -->
+      <article class="dj-card">
+        <div class="dj-media">
+          <img src="amelie.jpg">
+        </div>
+        <div class="dj-body">
           <h2>Amelie Lens</h2>
-          <p class="dj-tag">Techno / Dark / Driving</p>
+          <p class="dj-tag">Techno</p>
           <p>
-            Amelie Lens is a Belgian DJ and producer known for fast, intense techno sets.
-            Her style is dark, energetic, and highly immersive, making her one of the most
-            recognizable figures in contemporary European club culture.
+            Known for fast, hypnotic techno sets that dominate global clubs and festivals.
           </p>
         </div>
       </article>
 
+      <!-- Charlotte -->
       <article class="dj-card">
-        <div class="dj-card__content">
+        <div class="dj-media">
+          <img src="charlotte.jpg">
+        </div>
+        <div class="dj-body">
           <h2>Charlotte de Witte</h2>
-          <p class="dj-tag">Techno / Hypnotic / Industrial</p>
+          <p class="dj-tag">Techno / Industrial</p>
           <p>
-            Charlotte de Witte is known for stripped-back, hypnotic techno with a strong
-            industrial edge. Her sets often build tension through repetition, pressure,
-            and a cold, precise atmosphere.
-          </p>
-        </div>
-      </article>
-
-      <article class="dj-card">
-        <div class="dj-card__content">
-          <h2>Indira Paganotto</h2>
-          <p class="dj-tag">Psy-Techno / Trance / Festival</p>
-          <p>
-            Indira Paganotto blends techno with psychedelic and trance influences,
-            creating fast-paced sets that feel emotional, cosmic, and festival-driven.
-            Her sound connects club intensity with a more spiritual rave atmosphere.
+            Minimal, dark techno with strong underground identity and massive stage presence.
           </p>
         </div>
       </article>
 
     </section>
 
+    <!-- mini game -->
     <section class="quiz-card">
       <h2>Mini Game</h2>
-      <p class="quiz-question">Which genre is Amelie Lens most associated with?</p>
+      <p class="quiz-question">Which DJ is known for gabber?</p>
 
       <div class="quiz-buttons">
-        <button onclick="showAnswer('correct')">Techno</button>
-        <button onclick="showAnswer('wrong')">Psytrance</button>
-        <button onclick="showAnswer('wrong')">Drum &amp; Bass</button>
+        <button onclick="showAnswer('correct')">Angerfist</button>
+        <button onclick="showAnswer('wrong')">Amelie Lens</button>
+        <button onclick="showAnswer('wrong')">Charlotte</button>
       </div>
 
       <p id="quiz-result" class="quiz-result"></p>
     </section>
+<!-- Andy C -->
+<article class="dj-card">
+  <div class="dj-media">
+    <img src="andyc.jpg">
+  </div>
+  <div class="dj-body">
+    <h2>Andy C</h2>
+    <p class="dj-tag">Drum &amp; Bass</p>
+    <p>
+      A legendary figure in drum &amp; bass, known for fast mixing,
+      technical precision, and high-energy sets that define the genre.
+    </p>
+  </div>
+</article>
+
+<!-- Chase & Status -->
+<article class="dj-card">
+  <div class="dj-media">
+    <img src="chasestatus.jpg">
+  </div>
+  <div class="dj-body">
+    <h2>Chase &amp; Status</h2>
+    <p class="dj-tag">Drum &amp; Bass / Bass Music</p>
+    <p>
+      Blending drum &amp; bass with broader bass music styles, their sound
+      is powerful, cinematic, and widely influential across festival culture.
+    </p>
+  </div>
+</article>
   </main>
 
   <script>
@@ -95,11 +149,11 @@
       const result = document.getElementById('quiz-result');
 
       if (type === 'correct') {
-        result.textContent = 'Correct — Amelie Lens is most associated with techno.';
-        result.className = 'quiz-result correct';
+        result.textContent = "Correct.";
+        result.className = "quiz-result correct";
       } else {
-        result.textContent = 'Not quite — the correct answer is Techno.';
-        result.className = 'quiz-result wrong';
+        result.textContent = "Wrong. It's Angerfist.";
+        result.className = "quiz-result wrong";
       }
     }
   </script>
