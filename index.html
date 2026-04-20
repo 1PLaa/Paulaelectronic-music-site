@@ -4,20 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Electronic Music Atlas</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="home-page">
 
+  <!-- 🎥 背景视频 -->
   <video class="bg-video" autoplay muted loop playsinline>
-    <source src="background.mp4" type="video/mp4">
+    <source src="home-background.mp4" type="video/mp4">
   </video>
 
   <div class="bg-overlay"></div>
 
+  <!-- 🎵 背景音乐 -->
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- 导航 -->
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="active">Home</a>
@@ -27,47 +36,31 @@
     </nav>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1 class="glitch-title" data-text="Electronic Music Atlas">Electronic Music Atlas</h1>
-      <p>
-        A visual and sonic exploration of electronic music culture, focusing on atmosphere,
-        genre, and underground scenes.
-      </p>
-    </section>
+  <!-- 主视觉 -->
+  <main class="home-hero">
 
-    <section class="grid grid--3">
-      <div class="card">
-        <div class="media">
-          <img src="gabber.jpg" alt="Gabber">
-        </div>
-        <div class="card__body">
-          <h3>Gabber</h3>
-          <p>Hardcore rave culture with fast tempo and raw energy.</p>
-        </div>
-      </div>
+    <h1 class="home-title">Electronic Music Atlas</h1>
 
-      <div class="card">
-        <div class="media">
-          <img src="psytrance.jpg" alt="Psytrance">
-        </div>
-        <div class="card__body">
-          <h3>Psytrance</h3>
-          <p>Psychedelic loops and immersive festival environments.</p>
-        </div>
-      </div>
+    <p class="home-sub">
+      A visual and sonic journey through underground electronic culture.
+    </p>
 
-      <div class="card">
-        <div class="media">
-          <img src="dnb.jpg" alt="Drum and Bass">
-        </div>
-        <div class="card__body">
-          <h3>Drum &amp; Bass</h3>
-          <p>Fast breakbeats with deep bass and club intensity.</p>
-        </div>
-      </div>
-    </section>
+    <button class="enter-btn" id="enterBtn">
+      ENTER EXPERIENCE
+    </button>
+
   </main>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    const btn = document.getElementById('enterBtn');
+
+    btn.addEventListener('click', () => {
+      music.volume = 0.5;
+      music.play();
+      btn.innerText = "Sound On";
+    });
+  </script>
 
 </body>
 </html>
