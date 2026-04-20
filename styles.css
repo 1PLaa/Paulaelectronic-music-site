@@ -26,11 +26,11 @@ body {
   height: 100vh;
   object-fit: cover;
   z-index: -2;
-  filter: brightness(0.55) contrast(1.05) saturate(1.05);
+  filter: brightness(0.52) contrast(1.06) saturate(1.04);
   pointer-events: none;
 }
 
-/* 梦核遮罩 */
+/* 梦感遮罩 */
 .bg-overlay {
   position: fixed;
   top: 0;
@@ -39,9 +39,10 @@ body {
   height: 100vh;
   z-index: -1;
   background:
-    radial-gradient(circle at 30% 40%, rgba(180, 120, 255, 0.18), transparent 60%),
-    radial-gradient(circle at 70% 60%, rgba(120, 200, 255, 0.14), transparent 60%),
-    linear-gradient(rgba(10, 8, 20, 0.45), rgba(5, 5, 10, 0.65));
+    radial-gradient(circle at 30% 35%, rgba(182, 122, 255, 0.14), transparent 58%),
+    radial-gradient(circle at 72% 55%, rgba(110, 190, 255, 0.10), transparent 55%),
+    linear-gradient(rgba(8, 8, 18, 0.40), rgba(3, 3, 10, 0.62));
+  backdrop-filter: blur(4px);
   pointer-events: none;
 }
 
@@ -49,70 +50,98 @@ body {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.35);
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(10px);
 }
 
 .nav {
   display: flex;
-  gap: 20px;
-  padding: 15px 20px;
+  gap: 24px;
+  padding: 16px 24px;
   flex-wrap: wrap;
 }
 
 .nav a {
-  color: white;
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
-  font-family: 'Orbitron', Arial, sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: opacity 0.2s ease;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  transition: opacity 0.25s ease, text-shadow 0.25s ease;
 }
 
-.nav a:hover {
-  opacity: 0.75;
-}
-
+.nav a:hover,
 .nav a.active {
-  opacity: 0.7;
+  opacity: 0.78;
+  text-shadow: 0 0 10px rgba(160, 200, 255, 0.35);
 }
 
 /* 内容 */
 .container {
   position: relative;
   z-index: 2;
-  padding: 60px 20px;
-  max-width: 1400px;
+  max-width: 1420px;
   margin: 0 auto;
+  padding: 56px 24px 70px;
 }
 
-/* 标题区 */
+/* hero */
 .hero {
-  margin-bottom: 30px;
+  margin-bottom: 34px;
 }
 
-.hero h1 {
-  font-family: 'Rubik Glitch', cursive;
-  font-size: 72px;
-  line-height: 1;
+.glitch-title {
+  position: relative;
+  display: inline-block;
   margin: 0 0 18px;
-  letter-spacing: 2px;
+  font-size: 78px;
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #f8f8ff;
+  text-transform: uppercase;
   text-shadow:
-    0 0 8px rgba(255, 255, 255, 0.15),
-    0 0 20px rgba(180, 120, 255, 0.25);
+    0 0 8px rgba(255, 255, 255, 0.12),
+    0 0 22px rgba(149, 130, 255, 0.22);
+  animation: flickerMain 3.4s infinite steps(1);
+}
+
+.glitch-title::before,
+.glitch-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glitch-title::before {
+  color: rgba(110, 200, 255, 0.82);
+  transform: translate(2px, 0);
+  clip-path: inset(0 0 52% 0);
+  animation: glitchTop 2.2s infinite linear alternate-reverse;
+}
+
+.glitch-title::after {
+  color: rgba(255, 90, 180, 0.72);
+  transform: translate(-2px, 0);
+  clip-path: inset(54% 0 0 0);
+  animation: glitchBottom 1.9s infinite linear alternate-reverse;
 }
 
 .hero p {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0;
-  font-family: 'Orbitron', Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.90);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
 }
 
-/* grid */
+/* 卡片区域 */
 .grid {
   display: grid;
   gap: 22px;
@@ -123,23 +152,22 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* 卡片 */
 .card {
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(8, 8, 16, 0.42);
   border-radius: 18px;
   overflow: hidden;
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
-  border-color: rgba(180, 120, 255, 0.28);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26);
+  border-color: rgba(146, 154, 255, 0.22);
 }
 
 .media img {
@@ -155,24 +183,110 @@ body {
 
 .card__body h3 {
   margin: 0 0 12px;
-  font-family: 'Orbitron', Arial, sans-serif;
   font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
 }
 
 .card__body p {
   margin: 0;
-  font-family: 'Orbitron', Arial, sans-serif;
   font-size: 15px;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* 动态字 */
+@keyframes glitchTop {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-2px, -1px);
+  }
+  20% {
+    transform: translate(2px, 1px);
+  }
+  30% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(3px, -1px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  60% {
+    transform: translate(-3px, 0);
+  }
+  70% {
+    transform: translate(2px, -1px);
+  }
+  80% {
+    transform: translate(-1px, 1px);
+  }
+  90% {
+    transform: translate(1px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes glitchBottom {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(2px, 1px);
+  }
+  20% {
+    transform: translate(-2px, -1px);
+  }
+  30% {
+    transform: translate(1px, 0);
+  }
+  40% {
+    transform: translate(-3px, 1px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  60% {
+    transform: translate(2px, -1px);
+  }
+  70% {
+    transform: translate(-2px, 1px);
+  }
+  80% {
+    transform: translate(1px, -1px);
+  }
+  90% {
+    transform: translate(-1px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes flickerMain {
+  0%, 18%, 22%, 62%, 64%, 100% {
+    opacity: 1;
+    filter: none;
+  }
+  20% {
+    opacity: 0.88;
+    filter: blur(0.3px);
+  }
+  63% {
+    opacity: 0.93;
+    filter: blur(0.4px);
+  }
+}
+
 /* 响应式 */
 @media (max-width: 1100px) {
-  .hero h1 {
-    font-size: 58px;
+  .glitch-title {
+    font-size: 60px;
   }
 
   .grid--3 {
@@ -182,7 +296,7 @@ body {
 
 @media (max-width: 700px) {
   .container {
-    padding: 40px 16px;
+    padding: 38px 16px 48px;
   }
 
   .nav {
@@ -190,8 +304,9 @@ body {
     padding: 14px 16px;
   }
 
-  .hero h1 {
-    font-size: 42px;
+  .glitch-title {
+    font-size: 40px;
+    line-height: 1;
   }
 
   .hero p {
