@@ -669,3 +669,38 @@ body {
     font-size: 26px;
   }
 }
+/* ===== MOBILE FIX ===== */
+@media (max-width: 760px) {
+
+  /* 修复视频背景在手机不显示 */
+  .bg-video {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100dvh;
+    object-fit: cover;
+    z-index: -2;
+  }
+
+  .bg-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100dvh;
+    z-index: -1;
+  }
+
+  /* 图片尺寸变小（手机） */
+  .genre-media {
+    aspect-ratio: 16 / 10;
+    max-height: 220px;
+  }
+
+  .dj-feature-media {
+    aspect-ratio: 4 / 4.5;
+    max-height: 260px;
+  }
+
+}
