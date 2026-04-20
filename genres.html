@@ -3,13 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Genres | Paula Electronic Music</title>
+  <title>Genres | Electronic Music Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="genres-page">
 
-  <div class="animated-bg"></div>
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="background.mp4" type="video/mp4">
+  </video>
+
+  <div class="bg-overlay"></div>
 
   <header class="site-header">
     <nav class="nav">
@@ -21,26 +28,27 @@
   </header>
 
   <main class="container">
-
     <section class="page-hero">
-      <p class="eyebrow">Explore the sound</p>
-      <h1>Electronic Music Genres</h1>
-      <p class="page-description">
+      <h1 class="page-title">Electronic Music Genres</h1>
+      <p class="page-intro">
         Electronic music is not just one sound. It moves through clubs, warehouses,
-        festivals, and underground scenes in very different ways. This page introduces
-        three genres that each create a distinct atmosphere, rhythm, and experience.
+        festivals, and underground scenes in very different ways. Hover over each card
+        to experience a moving preview of each genre’s atmosphere.
       </p>
     </section>
 
-    <section class="grid grid--3">
+    <section class="genres-grid">
 
-      <article class="card">
-        <div class="media">
-          <img src="gabber.jpg" alt="Gabber music visual">
+      <article class="genre-card">
+        <div class="genre-media">
+          <img src="gabber.jpg" alt="Gabber">
+          <video class="hover-video" muted loop playsinline preload="metadata">
+            <source src="gabber-hover.mp4" type="video/mp4">
+          </video>
         </div>
-        <div class="card__body">
+        <div class="genre-body">
           <h2>Gabber</h2>
-          <p class="tag">Hardcore / Aggressive / Raw</p>
+          <p class="genre-tag">Hardcore / Aggressive / Raw</p>
           <p>
             Gabber is a fast and intense form of hardcore electronic music that became
             strongly associated with rave culture in the Netherlands. Its distorted kicks
@@ -53,13 +61,16 @@
         </div>
       </article>
 
-      <article class="card">
-        <div class="media">
-          <img src="psytrance.jpg" alt="Psytrance festival visual">
+      <article class="genre-card">
+        <div class="genre-media">
+          <img src="psytrance.jpg" alt="Psytrance">
+          <video class="hover-video" muted loop playsinline preload="metadata">
+            <source src="psytrance-hover.mp4" type="video/mp4">
+          </video>
         </div>
-        <div class="card__body">
+        <div class="genre-body">
           <h2>Psytrance</h2>
-          <p class="tag">Hypnotic / Psychedelic / Festival</p>
+          <p class="genre-tag">Hypnotic / Psychedelic / Festival</p>
           <p>
             Psytrance is known for its repetitive rhythms, layered textures, and immersive
             atmosphere. It often builds a trance-like feeling through fast beats and
@@ -73,13 +84,16 @@
         </div>
       </article>
 
-      <article class="card">
-        <div class="media">
-          <img src="dnb.jpg" alt="Drum and Bass club visual">
+      <article class="genre-card">
+        <div class="genre-media">
+          <img src="dnb.jpg" alt="Drum and Bass">
+          <video class="hover-video" muted loop playsinline preload="metadata">
+            <source src="dnb-hover.mp4" type="video/mp4">
+          </video>
         </div>
-        <div class="card__body">
+        <div class="genre-body">
           <h2>Drum &amp; Bass</h2>
-          <p class="tag">Fast / Bass-heavy / Urban</p>
+          <p class="genre-tag">Fast / Bass-heavy / Urban</p>
           <p>
             Drum &amp; Bass combines rapid breakbeats with deep basslines, creating a sound
             that is both energetic and highly rhythmic. It can feel dark and atmospheric
@@ -93,8 +107,29 @@
       </article>
 
     </section>
-
   </main>
+
+  <script>
+    const cards = document.querySelectorAll('.genre-card');
+
+    cards.forEach((card) => {
+      const video = card.querySelector('.hover-video');
+
+      card.addEventListener('mouseenter', () => {
+        if (video) {
+          video.currentTime = 0;
+          video.play();
+        }
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
