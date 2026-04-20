@@ -1,43 +1,108 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DJs | Electronic Music Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="djs-page">
 
-<header class="site-header">
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="genres.html">Genres</a>
-    <a href="djs.html">DJs</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="background.mp4" type="video/mp4">
+  </video>
 
-<main class="container">
+  <div class="bg-overlay"></div>
 
-<h1>DJs</h1>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="genres.html">Genres</a>
+      <a href="djs.html" class="active">DJs</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
 
-<div class="card">
-  <div class="card__body">
-    <h3>Amelie Lens</h3>
-    <p class="muted">Belgian techno DJ known for fast, dark sets.</p>
-  </div>
-</div>
+  <main class="container">
+    <section class="page-hero">
+      <h1 class="page-title">DJs</h1>
+      <p class="page-intro">
+        DJs shape electronic music culture through performance, atmosphere, and energy.
+        This page highlights a few artists associated with different scenes and sounds.
+      </p>
+    </section>
 
-<h2>Mini Game</h2>
+    <section class="djs-grid">
 
-<p>Which genre does Amelie Lens play?</p>
+      <article class="dj-card">
+        <div class="dj-card__content">
+          <h2>Amelie Lens</h2>
+          <p class="dj-tag">Techno / Dark / Driving</p>
+          <p>
+            Amelie Lens is a Belgian DJ and producer known for fast, intense techno sets.
+            Her style is dark, energetic, and highly immersive, making her one of the most
+            recognizable figures in contemporary European club culture.
+          </p>
+        </div>
+      </article>
 
-<button onclick="checkAnswer('A')">Hard Techno</button>
-<button onclick="checkAnswer('B')">Psytrance</button>
+      <article class="dj-card">
+        <div class="dj-card__content">
+          <h2>Charlotte de Witte</h2>
+          <p class="dj-tag">Techno / Hypnotic / Industrial</p>
+          <p>
+            Charlotte de Witte is known for stripped-back, hypnotic techno with a strong
+            industrial edge. Her sets often build tension through repetition, pressure,
+            and a cold, precise atmosphere.
+          </p>
+        </div>
+      </article>
 
-<p id="result"></p>
+      <article class="dj-card">
+        <div class="dj-card__content">
+          <h2>Indira Paganotto</h2>
+          <p class="dj-tag">Psy-Techno / Trance / Festival</p>
+          <p>
+            Indira Paganotto blends techno with psychedelic and trance influences,
+            creating fast-paced sets that feel emotional, cosmic, and festival-driven.
+            Her sound connects club intensity with a more spiritual rave atmosphere.
+          </p>
+        </div>
+      </article>
 
-</main>
+    </section>
 
-<script src="script.js"></script>
+    <section class="quiz-card">
+      <h2>Mini Game</h2>
+      <p class="quiz-question">Which genre is Amelie Lens most associated with?</p>
+
+      <div class="quiz-buttons">
+        <button onclick="showAnswer('correct')">Techno</button>
+        <button onclick="showAnswer('wrong')">Psytrance</button>
+        <button onclick="showAnswer('wrong')">Drum &amp; Bass</button>
+      </div>
+
+      <p id="quiz-result" class="quiz-result"></p>
+    </section>
+  </main>
+
+  <script>
+    function showAnswer(type) {
+      const result = document.getElementById('quiz-result');
+
+      if (type === 'correct') {
+        result.textContent = 'Correct — Amelie Lens is most associated with techno.';
+        result.className = 'quiz-result correct';
+      } else {
+        result.textContent = 'Not quite — the correct answer is Techno.';
+        result.className = 'quiz-result wrong';
+      }
+    }
+  </script>
 
 </body>
 </html>
