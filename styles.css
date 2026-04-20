@@ -352,3 +352,61 @@ body {
     font-size: 20px;
   }
 }
+/* ===== HOME PAGE 专属 ===== */
+
+.home-hero {
+  position: relative;
+  z-index: 2;
+  height: calc(100vh - 70px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 20px;
+}
+
+.home-title {
+  font-size: 72px;
+  font-weight: 800;
+  margin-bottom: 20px;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: white;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.3),
+    0 0 20px rgba(180,120,255,0.3),
+    0 0 40px rgba(120,200,255,0.2);
+}
+
+.home-sub {
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 30px;
+
+  color: rgba(255,255,255,0.85);
+}
+
+.enter-btn {
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 700;
+
+  border: 1px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: white;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.enter-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
