@@ -39,7 +39,7 @@
 
     <section class="genres-grid">
 
-      <article class="genre-card">
+      <article class="genre-card interactive-card" data-track="gabber-track">
         <div class="genre-media">
           <img src="gabber.jpg" alt="Gabber">
           <video class="hover-video" muted loop playsinline preload="metadata">
@@ -58,10 +58,14 @@
             The genre feels direct, rebellious, and industrial. It is often connected to
             underground parties, warehouse spaces, and a more extreme side of club culture.
           </p>
+
+          <audio controls class="genre-audio">
+            <source src="gabber.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </article>
 
-      <article class="genre-card">
+      <article class="genre-card interactive-card" data-track="psytrance-track">
         <div class="genre-media">
           <img src="psytrance.jpg" alt="Psytrance">
           <video class="hover-video" muted loop playsinline preload="metadata">
@@ -81,10 +85,14 @@
             Its sound feels cosmic, spiritual, and dreamlike while still keeping strong
             dance energy.
           </p>
+
+          <audio controls class="genre-audio">
+            <source src="psytrance.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </article>
 
-      <article class="genre-card">
+      <article class="genre-card interactive-card" data-track="dnb-track">
         <div class="genre-media">
           <img src="dnb.jpg" alt="Drum and Bass">
           <video class="hover-video" muted loop playsinline preload="metadata">
@@ -103,22 +111,45 @@
             The genre has a strong club presence and a distinct urban intensity. It is
             designed to move quickly, hit hard, and keep the listener locked into momentum.
           </p>
+
+          <audio controls class="genre-audio">
+            <source src="dnb.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </article>
 
     </section>
   </main>
 
-  <script>
-    const cards = document.querySelectorAll('.genre-card');
+  <!-- hidden background tracks -->
+  <audio id="gabber-track" loop>
+    <source src="gabber.mp3" type="audio/mpeg">
+  </audio>
 
-    cards.forEach((card) => {
-      const video = card.querySelector('.hover-video');
+  <audio id="psytrance-track" loop>
+    <source src="psytrance.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="dnb-track" loop>
+    <source src="dnb.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const cards = document.querySelectorAll('.interactive-card');
+    const hoverVideos = document.querySelectorAll('.hover-video');
+    const bgTracks = {
+      'gabber-track': document.getElementById('gabber-track'),
+      'psytrance-track': document.getElementById('psytrance-track'),
+      'dnb-track': document.getElementById('dnb-track')
+    };
+
+    hoverVideos.forEach((video) => {
+      const card = video.closest('.genre-card');
 
       card.addEventListener('mouseenter', () => {
         if (video) {
           video.currentTime = 0;
-          video.play();
+          video.play().catch(() => {});
         }
       });
 
@@ -126,6 +157,38 @@
         if (video) {
           video.pause();
           video.currentTime = 0;
+        }
+      });
+    });
+
+    function stopAllTracks() {
+      Object.values(bgTracks).forEach(track => {
+        track.pause();
+        track.currentTime = 0;
+      });
+      cards.forEach(card => card.classList.remove('is-playing'));
+      document.body.classList.remove('music-active');
+    }
+
+    cards.forEach((card) => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('.genre-audio')) return;
+
+        const targetId = card.dataset.track;
+        const targetTrack = bgTracks[targetId];
+
+        if (!targetTrack) return;
+
+        const alreadyPlaying = card.classList.contains('is-playing');
+
+        stopAllTracks();
+
+        if (!alreadyPlaying) {
+          targetTrack.volume = 0.45;
+          targetTrack.play().then(() => {
+            card.classList.add('is-playing');
+            document.body.classList.add('music-active');
+          }).catch(() => {});
         }
       });
     });
