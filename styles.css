@@ -854,3 +854,47 @@ body {
   }
 
 }
+/* ===== GENRES MUSIC INTERACTION ===== */
+
+.genre-audio {
+  width: 100%;
+  margin-top: 14px;
+  filter: invert(1) brightness(1.15);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.genre-audio:hover {
+  opacity: 1;
+}
+
+.interactive-card {
+  cursor: pointer;
+}
+
+.interactive-card:hover {
+  animation: raveShake 0.22s ease-in-out 2;
+}
+
+.interactive-card.is-playing {
+  border-color: rgba(180, 120, 255, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(180, 120, 255, 0.18),
+    0 0 22px rgba(180, 120, 255, 0.22),
+    0 14px 34px rgba(0, 0, 0, 0.26);
+}
+
+.music-active .bg-overlay {
+  background:
+    radial-gradient(circle at 30% 35%, rgba(210, 120, 255, 0.22), transparent 55%),
+    radial-gradient(circle at 75% 60%, rgba(120, 210, 255, 0.18), transparent 55%),
+    linear-gradient(rgba(5, 5, 10, 0.42), rgba(0, 0, 0, 0.68));
+}
+
+@keyframes raveShake {
+  0% { transform: translateY(-8px) translateX(0); }
+  25% { transform: translateY(-8px) translateX(-2px); }
+  50% { transform: translateY(-8px) translateX(2px); }
+  75% { transform: translateY(-8px) translateX(-1px); }
+  100% { transform: translateY(-8px) translateX(0); }
+}
