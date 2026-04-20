@@ -1,93 +1,76 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Electronic Music Atlas</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="brand">
-    <div class="brand__title">ELECTRONIC MUSIC ATLAS</div>
-    <div class="brand__subtitle">Genres • DJs • Micro-scenes</div>
-  </div>
+  <!-- 视频背景 -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="background.mp4" type="video/mp4">
+  </video>
 
-  <nav class="nav">
-    <a class="nav__link is-active" href="index.html">Home</a>
-    <a class="nav__link" href="genres.html">Genres</a>
-    <a class="nav__link" href="djs.html">DJs</a>
-    <a class="nav__link" href="about.html">About</a>
-  </nav>
-</header>
+  <!-- 梦核遮罩 -->
+  <div class="bg-overlay"></div>
 
-<main class="container">
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="genres.html">Genres</a>
+      <a href="djs.html">DJs</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
 
-<section class="hero">
-  <h1>Electronic subculture, mapped.</h1>
-  <p class="muted">
-    This website explores underground electronic music through genre,
-    atmosphere, and visual culture. It focuses on how different scenes
-    express identity through sound and space.
-  </p>
-</section>
+  <main class="container">
 
-<section class="section">
-  <h2>Featured Genres</h2>
+    <section class="hero">
+      <h1>Electronic Music Atlas</h1>
+      <p>
+        A visual and sonic exploration of electronic music culture,
+        focusing on atmosphere, genre, and underground scenes.
+      </p>
+    </section>
 
-  <div class="grid grid--3">
+    <section class="grid grid--3">
 
-    <div class="card">
-      <div class="media">
-        <img src="gabber.jpg" alt="Gabber rave">
+      <div class="card">
+        <div class="media">
+          <img src="gabber.jpg" alt="">
+        </div>
+        <div class="card__body">
+          <h3>Gabber</h3>
+          <p>Hardcore rave culture with raw, aggressive energy.</p>
+        </div>
       </div>
-      <div class="card__body">
-        <h3>Gabber</h3>
-        <p class="muted">
-          Hardcore rave culture with fast tempo, distorted kicks,
-          and intense physical energy.
-        </p>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="media">
-        <img src="psytrance.jpg" alt="Psytrance stage">
+      <div class="card">
+        <div class="media">
+          <img src="psytrance.jpg" alt="">
+        </div>
+        <div class="card__body">
+          <h3>Psytrance</h3>
+          <p>Psychedelic soundscapes built for immersive festivals.</p>
+        </div>
       </div>
-      <div class="card__body">
-        <h3>Psytrance</h3>
-        <p class="muted">
-          Psychedelic music built around hypnotic loops,
-          immersive visuals, and festival environments.
-        </p>
+
+      <div class="card">
+        <div class="media">
+          <img src="dnb.jpg" alt="">
+        </div>
+        <div class="card__body">
+          <h3>Drum &amp; Bass</h3>
+          <p>Fast breakbeats and deep bass for high-energy clubs.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <div class="media">
-        <img src="dnb.jpg" alt="Drum and Bass speakers">
-      </div>
-      <div class="card__body">
-        <h3>Drum &amp; Bass</h3>
-        <p class="muted">
-          Fast breakbeats combined with heavy bass,
-          rooted in sound system and club culture.
-        </p>
-      </div>
-    </div>
+    </section>
 
-  </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer__inner">
-    <small class="muted">Graphic Design 2 — Resource Website</small>
-  </div>
-</footer>
+  </main>
 
 </body>
 </html>
