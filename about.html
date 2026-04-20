@@ -1,36 +1,86 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Electronic Music Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="about-page">
 
-<header class="site-header">
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="genres.html">Genres</a>
-    <a href="djs.html">DJs</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="background.mp4" type="video/mp4">
+  </video>
 
-<main class="container">
+  <div class="bg-overlay"></div>
 
-<h1>About</h1>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="genres.html">Genres</a>
+      <a href="djs.html">DJs</a>
+      <a href="about.html" class="active">About</a>
+    </nav>
+  </header>
 
-<p class="muted">
-This website is a resource for exploring underground electronic music.
-I wanted to map how genres connect and how DJs shape different scenes.
+  <main class="container">
+    <section class="page-hero">
+      <h1 class="page-title">About</h1>
+      <p class="page-intro">
+        Electronic Music Atlas is a resource website that introduces underground electronic
+        music through genre, DJ culture, and atmosphere. Rather than treating music as fixed
+        categories, this project maps it as a network of scenes, energy, and influence.
+      </p>
+    </section>
 
-Instead of treating music as fixed categories, this site shows it as
-a network of culture, energy, and influence.
+    <section class="about-grid">
+      <article class="about-card">
+        <h2>Purpose</h2>
+        <p>
+          This website was created as an accessible entry point for people who are curious
+          about electronic music but may not know where to begin. It introduces different
+          styles in a way that feels visual, direct, and easy to explore.
+        </p>
+      </article>
 
-It is designed as a simple and accessible entry point for people who
-are curious about electronic music but don’t know where to start.
-</p>
+      <article class="about-card">
+        <h2>Focus</h2>
+        <p>
+          The project focuses on underground and club-based electronic music cultures,
+          including gabber, psytrance, techno, hardcore, and drum &amp; bass. It highlights
+          how sound is shaped not only by genre, but also by performance, space, and subculture.
+        </p>
+      </article>
 
-</main>
+      <article class="about-card">
+        <h2>Design Direction</h2>
+        <p>
+          The visual system uses moving backgrounds, dark tones, and immersive media to reflect
+          the dreamlike, intense, and atmospheric qualities of electronic music scenes. The goal
+          is to make the website feel like an experience rather than only a collection of facts.
+        </p>
+      </article>
+    </section>
+
+    <section class="about-statement">
+      <div class="about-statement__inner">
+        <h2>Creator Statement</h2>
+        <p>
+          I wanted to show how genres connect and how DJs help shape different scenes. Instead
+          of presenting electronic music as something fixed, I wanted to treat it as something
+          living, emotional, and constantly moving between spaces, people, and identities.
+        </p>
+        <p>
+          This site combines information with atmosphere so that users can not only read about
+          electronic music, but also get a stronger feeling for its visual and cultural energy.
+        </p>
+      </div>
+    </section>
+  </main>
 
 </body>
 </html>
