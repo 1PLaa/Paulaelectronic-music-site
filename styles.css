@@ -17,7 +17,6 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -3;
-
   filter: brightness(0.6) contrast(1.1) saturate(1.1);
 }
 
@@ -54,12 +53,16 @@ body {
   text-decoration: none;
 }
 
-/* 主体 */
+.nav a.active {
+  opacity: 0.7;
+}
+
+/* 内容 */
 .container {
   padding: 60px 20px;
 }
 
-/* hero */
+/* 标题 */
 .hero h1 {
   font-size: 48px;
   margin-bottom: 10px;
