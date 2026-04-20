@@ -4,15 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DJs | Electronic Music Atlas</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="djs-page">
 
   <video class="bg-video" autoplay muted loop playsinline>
     <source src="background.mp4" type="video/mp4">
@@ -30,118 +28,114 @@
   </header>
 
   <main class="container">
-
     <section class="page-hero">
       <h1 class="page-title">DJs</h1>
       <p class="page-intro">
-        DJs define the sound, energy, and identity of electronic music scenes.
+        DJs give electronic music its identity through sound, energy, and performance.
+        This page highlights artists connected to techno, gabber, hardcore, and drum &amp; bass scenes.
       </p>
     </section>
 
-    <section class="djs-grid">
+    <section class="dj-grid">
 
-      <!-- Angerfist -->
-      <article class="dj-card">
-        <div class="dj-media">
-          <img src="angerfist.jpg">
+      <article class="dj-feature-card">
+        <div class="dj-feature-media">
+          <img src="angerfist.jpg" alt="Angerfist">
         </div>
-        <div class="dj-body">
+        <div class="dj-feature-body">
           <h2>Angerfist</h2>
-          <p class="dj-tag">Gabber / Hardcore</p>
+          <p class="dj-genre">Gabber / Hardcore</p>
           <p>
-            One of the most iconic figures in hardcore and gabber, known for aggressive,
-            high-BPM tracks and his signature mask.
+            Angerfist is one of the most iconic names in hardcore and gabber, known for
+            aggressive high-BPM tracks, dark energy, and a strong visual identity.
           </p>
         </div>
       </article>
 
-      <!-- Miss K8 -->
-      <article class="dj-card">
-        <div class="dj-media">
-          <img src="missk8.jpg">
+      <article class="dj-feature-card">
+        <div class="dj-feature-media">
+          <img src="missk8.jpg" alt="Miss K8">
         </div>
-        <div class="dj-body">
+        <div class="dj-feature-body">
           <h2>Miss K8</h2>
-          <p class="dj-tag">Hardcore / Industrial</p>
+          <p class="dj-genre">Hardcore / Industrial</p>
           <p>
-            A leading force in modern hardcore, combining dark atmospheres with intense
-            festival energy.
+            Miss K8 is a major figure in contemporary hardcore, combining dark atmosphere,
+            festival intensity, and a more industrial edge.
           </p>
         </div>
       </article>
 
-      <!-- Amelie -->
-      <article class="dj-card">
-        <div class="dj-media">
-          <img src="amelie.jpg">
+      <article class="dj-feature-card">
+        <div class="dj-feature-media">
+          <img src="amelie.jpg" alt="Amelie Lens">
         </div>
-        <div class="dj-body">
+        <div class="dj-feature-body">
           <h2>Amelie Lens</h2>
-          <p class="dj-tag">Techno</p>
+          <p class="dj-genre">Techno</p>
           <p>
-            Known for fast, hypnotic techno sets that dominate global clubs and festivals.
+            Amelie Lens is known for fast, hypnotic techno sets with strong momentum,
+            driving rhythms, and global festival presence.
           </p>
         </div>
       </article>
 
-      <!-- Charlotte -->
-      <article class="dj-card">
-        <div class="dj-media">
-          <img src="charlotte.jpg">
+      <article class="dj-feature-card">
+        <div class="dj-feature-media">
+          <img src="charlotte.jpg" alt="Charlotte de Witte">
         </div>
-        <div class="dj-body">
+        <div class="dj-feature-body">
           <h2>Charlotte de Witte</h2>
-          <p class="dj-tag">Techno / Industrial</p>
+          <p class="dj-genre">Techno / Industrial</p>
           <p>
-            Minimal, dark techno with strong underground identity and massive stage presence.
+            Charlotte de Witte’s sound is minimal, dark, and precise, with a strong
+            underground character and industrial atmosphere.
+          </p>
+        </div>
+      </article>
+
+      <article class="dj-feature-card">
+        <div class="dj-feature-media">
+          <img src="andyc.jpg" alt="Andy C">
+        </div>
+        <div class="dj-feature-body">
+          <h2>Andy C</h2>
+          <p class="dj-genre">Drum &amp; Bass</p>
+          <p>
+            Andy C is a legendary drum &amp; bass DJ known for technical mixing,
+            speed, and high-energy sets that helped define the genre.
+          </p>
+        </div>
+      </article>
+
+      <article class="dj-feature-card">
+        <div class="dj-feature-media">
+          <img src="chasestatus.jpg" alt="Chase and Status">
+        </div>
+        <div class="dj-feature-body">
+          <h2>Chase &amp; Status</h2>
+          <p class="dj-genre">Drum &amp; Bass / Bass Music</p>
+          <p>
+            Chase &amp; Status blend drum &amp; bass with a broader bass music sound,
+            creating cinematic, powerful tracks with strong festival appeal.
           </p>
         </div>
       </article>
 
     </section>
 
-    <!-- mini game -->
-    <section class="quiz-card">
+    <section class="quiz-panel">
       <h2>Mini Game</h2>
-      <p class="quiz-question">Which DJ is known for gabber?</p>
+      <p class="quiz-question">Which DJ is most strongly associated with gabber?</p>
 
-      <div class="quiz-buttons">
+      <div class="quiz-options">
         <button onclick="showAnswer('correct')">Angerfist</button>
         <button onclick="showAnswer('wrong')">Amelie Lens</button>
-        <button onclick="showAnswer('wrong')">Charlotte</button>
+        <button onclick="showAnswer('wrong')">Chase &amp; Status</button>
       </div>
 
       <p id="quiz-result" class="quiz-result"></p>
     </section>
-<!-- Andy C -->
-<article class="dj-card">
-  <div class="dj-media">
-    <img src="andyc.jpg">
-  </div>
-  <div class="dj-body">
-    <h2>Andy C</h2>
-    <p class="dj-tag">Drum &amp; Bass</p>
-    <p>
-      A legendary figure in drum &amp; bass, known for fast mixing,
-      technical precision, and high-energy sets that define the genre.
-    </p>
-  </div>
-</article>
-
-<!-- Chase & Status -->
-<article class="dj-card">
-  <div class="dj-media">
-    <img src="chasestatus.jpg">
-  </div>
-  <div class="dj-body">
-    <h2>Chase &amp; Status</h2>
-    <p class="dj-tag">Drum &amp; Bass / Bass Music</p>
-    <p>
-      Blending drum &amp; bass with broader bass music styles, their sound
-      is powerful, cinematic, and widely influential across festival culture.
-    </p>
-  </div>
-</article>
   </main>
 
   <script>
@@ -149,11 +143,11 @@
       const result = document.getElementById('quiz-result');
 
       if (type === 'correct') {
-        result.textContent = "Correct.";
-        result.className = "quiz-result correct";
+        result.textContent = 'Correct — Angerfist is most associated with gabber.';
+        result.className = 'quiz-result correct';
       } else {
-        result.textContent = "Wrong. It's Angerfist.";
-        result.className = "quiz-result wrong";
+        result.textContent = 'Not quite — the correct answer is Angerfist.';
+        result.className = 'quiz-result wrong';
       }
     }
   </script>
